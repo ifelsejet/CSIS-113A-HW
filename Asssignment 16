@@ -1,0 +1,86 @@
+/*
+Include mandatory info here
+*/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int countNums(int ar[][10], int size, int search);
+void fill2DArray(int a[][10], int size);
+void print2DArray(int a[][10], int size);
+int getDivisible(int ar[][10], int divisor, int a[], int size);
+
+
+
+
+int main()
+{
+ int ar[10][10];
+ int arr[10];
+ int num;
+ 
+ fill2DArray(ar,10);
+ print2DArray(ar,10);
+ 
+ cout << "Enter a number to divide by" << endl;
+ cin >> num;
+ int count = getDivisible(ar,num, arr, 10);
+ cout << "There are " << count << " evenly divisible in the array" << endl;
+ printArray();
+ 
+ return 0;
+ 
+}
+void fill2DArray(int a[][10], int size){
+ for(int row = 0; row < size; row++){
+    for(int col = 0; col < size; col++){
+     a[row][col] = rand() % 1000 + 1;   
+    }
+ }
+}
+
+void print2DArray (int a[][10], int size){
+for(int row = 0; row < size; row++){
+    for(int col = 0; col < size; col++){
+        cout << a[row][col] << "\t";   
+        }
+    cout << endl;
+ }
+}
+
+int getDivisible(int ar[][10], int divisor, int a[], int size){
+ int count = 0;
+    for(int row= 0; int i = 0; row < size; row++){
+        for(int col = 0; col < size; col++){
+         if(ar[row][col] % divisor == 0){
+          //   a[i] = ar[row][col];
+            count++; 
+         }
+        }
+    }
+ return count; 
+}
+void printArray(int a[10], int size){
+    for (int row = 0; row < size; row++){
+            cout << a[row] << endl;
+    }
+}
+
+/*
+int countNums(int ar[][5], int size, int search){
+    int count = 0;
+ for(int row = 0; row < size; row++){
+    for(int col = 0; col < size; col++){
+        if(ar[row][col] == search){
+         count++;
+         cout << "Found at Row: " << row << "Column: " col <<  endl;
+          
+        }
+    }
+ }
+ return count;
+ 
+}
+*/
