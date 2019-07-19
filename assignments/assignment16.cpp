@@ -1,5 +1,14 @@
 /*
-Include mandatory info here
+Jatnael Montes
+
+ID: 0508989
+
+November 11, 2019
+
+Assignment 16 - 2D Arrays 
+
+This is lab (assignment) 16 which fills a 2D array with random numbers then outputs all numbers in that 
+array that are divisible by a number inputted by the user and then outputs it to the screen
 */
 
 #include <iostream>
@@ -11,7 +20,7 @@ int countNums(int ar[][10], int size, int search);
 void fill2DArray(int a[][10], int size);
 void print2DArray(int a[][10], int size);
 int getDivisible(int ar[][10], int divisor, int a[], int size);
-
+void printArray(int a[10], int size);
 
 
 
@@ -55,7 +64,7 @@ int getDivisible(int ar[][10], int divisor, int a[], int size){
     for(int row= 0; int i = 0; row < size; row++){
         for(int col = 0; col < size; col++){
          if(ar[row][col] % divisor == 0){
-          //   a[i] = ar[row][col];
+           a[i] = ar[row][col];
             count++; 
          }
         }
@@ -68,19 +77,3 @@ void printArray(int a[10], int size){
     }
 }
 
-/*
-int countNums(int ar[][5], int size, int search){
-    int count = 0;
- for(int row = 0; row < size; row++){
-    for(int col = 0; col < size; col++){
-        if(ar[row][col] == search){
-         count++;
-         cout << "Found at Row: " << row << "Column: " col <<  endl;
-          
-        }
-    }
- }
- return count;
- 
-}
-*/
